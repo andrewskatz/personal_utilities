@@ -215,6 +215,14 @@ def embed_raw_text(raw_text, model_name, max_seq_length=128):
         
         print(f"New model max_seq_length: {embedder.max_seq_length}.")
         model_provided = True
+
+    elif model_name == 'bge-large':        
+        embedder = SentenceTransformer('BAAI/bge-large-en')
+        print(f"Original model max_seq_length: {embedder.max_seq_length}.")
+        embedder.max_seq_length=max_seq_length
+        
+        print(f"New model max_seq_length: {embedder.max_seq_length}.")
+        model_provided = True
         
     elif model_name == 't5':        
         # t5 (text-to-text transfer transformer model
