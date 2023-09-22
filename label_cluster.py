@@ -429,7 +429,7 @@ def get_majority(counts_df, id_col='sent_id', counts_col='label_counts', n=5):
 
   has_no_majority_df = counts_df[~counts_df[id_col].isin(has_majority_ids)] 
   # need to drop duplicates from has_no_majority_df
-  has_no_majority_df = has_no_majority_df.drop_duplicates(subset=[id_col])
+  # has_no_majority_df = has_no_majority_df.drop_duplicates(subset=[id_col])
 
   majority_n = has_majority_df[id_col].nunique()
   no_majority_n = has_no_majority_df[id_col].nunique()
