@@ -217,7 +217,7 @@ def embed_raw_text(raw_text, model_name, max_seq_length=128):
         model_provided = True
 
     elif model_name == 'bge-large':        
-        embedder = SentenceTransformer('BAAI/bge-large-en')
+        embedder = SentenceTransformer('BAAI/bge-large-en-v1.5')
         print(f"Original model max_seq_length: {embedder.max_seq_length}.")
         embedder.max_seq_length=max_seq_length
         
